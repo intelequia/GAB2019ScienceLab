@@ -1,0 +1,10 @@
+{
+  "$schema": "https://aka.ms/azure-quickstart-templates-metadata-schema#",
+  "type": "QuickStart",
+  "itemDisplayName": "Global Azure Bootcamp 2019 - Science Lab client on Azure Container Instances",
+  "description": "Deploy the Global Azure Bootcamp 2019 science lab client on a given number of Azure Container Instances.",
+  "summary": "Deploy the Global Azure Bootcamp 2019 science lab client on a given number of Azure Container Instances.",
+  "githubUsername": "davidjrh",
+  "dateUpdated": "2019-03-29"
+}
+

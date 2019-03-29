@@ -1,0 +1,27 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "Email": {
+      "value": "johndoe@foo.com"
+    },
+    "FullName": {
+      "value": "John Doe"
+    },
+    "TeamName": {
+      "value": "Global Azure Team"
+    },
+    "CompanyName": {
+      "value": "My Company Name"
+    },
+    "CountryCode": {
+      "value": "XX"
+    },
+    "LabKeyCode": {
+      "value": "XXX-YYY-ZZZ"
+    },	  
+	"InstanceCount": {
+	"value": 2
+	}
+  }
+}

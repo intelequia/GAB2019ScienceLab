@@ -1,0 +1,183 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "name": {
+      "type": "string",
+      "metadata": {
+        "description": "Name for the container group"
+      },
+      "defaultValue": "gabsciencelab"
+    },
+    "image": {
+      "type": "string",
+      "metadata": {
+        "description": "Container image to deploy. Should be of the form accountName/imagename:tag for images stored in Docker Hub or a fully qualified URI for a private registry like the Azure Container Registry."
+      },
+      "defaultValue": "globalazurebootcamp/sciencelab2019:latest"
+    },
+    "port": {
+      "type": "string",
+      "metadata": {
+        "description": "Port to open on the container and the public IP address."
+      },
+      "defaultValue": "80"
+    },
+    "cpuCores": {
+      "type": "string",
+      "metadata": {
+        "description": "The number of CPU cores to allocate to the container. Must be an integer."
+      },
+      "defaultValue": "1.0"
+    },
+    "memoryInGb": {
+      "type": "string",
+      "metadata": {
+        "description": "The amount of memory to allocate to the container in gigabytes."
+      },
+      "defaultValue": "1.5"
+    },
+    "location": {
+      "type": "string",
+      "defaultValue": "[resourceGroup().location]",
+      "metadata": {
+        "description": "Location for all resources."
+      }
+    },
+    "restartPolicy": {
+      "type": "string",
+      "defaultValue": "always",
+      "metadata": {
+        "description": "The behavior of Azure runtime if container has stopped."
+      },
+      "allowedValues": [
+        "never",
+        "always",
+        "onfailure"
+      ]
+    },
+    "Email": {
+      "type": "string",
+      "minLength": 5,
+      "maxLength": 100,
+      "metadata": {
+        "description": "Your email address (won't be shared or shown anywhere)"
+      }
+    },
+    "FullName": {
+      "type": "string",
+      "minLength": 5,
+      "maxLength": 50,
+      "metadata": {
+        "description": "Your full name to be displayed on the global dashboards"
+      }
+    },
+    "TeamName": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 100,
+      "metadata": {
+        "description": "Your team name to be displayed on the global dashboards"
+      }
+    },
+    "CompanyName": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 50,
+      "metadata": {
+        "description": "Your company name to be displayed on the global dashboards"
+      }
+    },
+    "CountryCode": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 2,
+      "metadata": {
+        "description": "Your country ISO2 code to be displayed on the global dashboards. Check <a href='https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2' target='_new'>Wikipedia</a> for more info"
+      }
+    },
+    "LabKeyCode": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 50,
+      "metadata": {
+        "description": "The code that identifies your Azure Bootcamp headquarter. Ask to staff for it or leave it in blank if you are not running the science lab as part of an Azure Bootcamp location"
+      }
+    }
+  },
+  "variables": {},
+  "resources": [
+    {
+      "name": "[parameters('name')]",
+      "type": "Microsoft.ContainerInstance/containerGroups",
+      "apiVersion": "2018-10-01",
+      "location": "[parameters('location')]",
+      "properties": {
+        "containers": [
+          {
+            "name": "[parameters('name')]",
+            "properties": {
+				"image": "[parameters('image')]",
+				"ports": [
+					{
+						"protocol": "Tcp",
+						"port": "[parameters('port')]"
+					}
+				],
+				"environmentVariables": [
+					{
+						"name": "BatchClient__Email",
+						"value": "[parameters('Email')]"
+					},
+					{
+						"name": "BatchClient__Fullname",
+						"value": "[parameters('FullName')]"
+					},
+					{
+						"name": "BatchClient__TeamName",
+						"value": "[parameters('TeamName')]"
+					},					
+					{
+						"name": "BatchClient__CompanyName",
+						"value": "[parameters('CompanyName')]"
+					},
+					{
+						"name": "BatchClient__CountryCode",
+						"value": "[parameters('CountryCode')]"
+					},
+					{
+						"name": "BatchClient__LabKeyCode",
+						"value": "[parameters('LabKeyCode')]"
+					}						
+				],			  
+				"resources": {
+					"requests": {
+						"cpu": "[parameters('cpuCores')]",
+						"memoryInGb": "[parameters('memoryInGb')]"
+					}
+				}
+            }
+          }
+        ],
+        "osType": "Linux",
+        "restartPolicy": "[parameters('restartPolicy')]",
+        "ipAddress": {
+          "type": "Public",
+          "ports": [
+            {
+              "protocol": "Tcp",
+              "port": "[parameters('port')]"
+            }
+          ],
+		  "dnsNameLabel": "[parameters('name')]"		  
+        }
+      }
+    }
+  ],
+  "outputs": {
+    "containerIPv4Address": {
+      "type": "string",
+      "value": "[reference(resourceId('Microsoft.ContainerInstance/containerGroups/', parameters('name'))).ipAddress.fqdn]"
+    }
+  }
+}
