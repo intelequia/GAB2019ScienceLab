@@ -72,7 +72,7 @@
   "resources": [
 	{
 	  "apiVersion": "2015-01-01",
-	  "name": "CreateContainerGroup",
+	  "name": "[concat('CreateContainerGroup', copyIndex(1))]",
 	  "type": "Microsoft.Resources/deployments",
 	  "dependsOn": [
 	  ],
