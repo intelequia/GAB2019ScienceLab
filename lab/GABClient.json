@@ -83,7 +83,7 @@
 		  "contentVersion": "1.0.0.0"
 		},
 		"parameters": {
-		  "name": { "value": "[variables('ClientUniqueName')]" },
+		  "name": { "value": "[concat(variables('ClientUniqueName'), copyIndex(1))]" },
 		  "image": { "value": "[variables('image')]" },
 		  "port": { "value": "[variables('port')]" },
 		  "cpuCores": { "value": "[variables('cpuCores')]" },
@@ -97,6 +97,10 @@
 		  "CountryCode": { "value": "[parameters('CountryCode')]" },
 		  "LabKeyCode": { "value": "[parameters('LabKeyCode')]" },
 		}
+	  },
+	  "copy": {
+		  "name": "isntanceCopy",
+		  "count": "[parameters('InstanceCount')]"
 	  }
 	}  
   ],
