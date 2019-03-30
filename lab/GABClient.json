@@ -99,7 +99,7 @@
 		}
 	  },
 	  "copy": {
-		  "name": "isntanceCopy",
+		  "name": "instanceCopy",
 		  "count": "[parameters('InstanceCount')]"
 	  }
 	}  
