@@ -58,7 +58,30 @@ The easiest way to deploy the Science Lab is by using Azure Container Instances.
 
 Now relax and wait for the green check. Will take around 2 minutes to complete.
 
+# Verifying that the lab is working
+Once the lab has been deployed, you will see a set of resources under the resource group, one per container instance group. Each group will container just one container instance. 
 
+Click on one of the container instances, and get the public DNS name from the General Settings area. Browse the URL and you would be able to see if the lab is working properly. There are three areas:
+* **Inputs Downloaded**: a green light indicates that is working properly. Every 10 seconds a background process checks if there are no inputs to process, and then downloads a new batch of inputs;
+* **Processing**: a green light indicates that is working properly. A background process starts processing the inputs as soon as they are available locally. The inputs are processed one by one and results are saved into an internal output queue;
+* **Ouputs Uploaded**: a green light indicates that is working properly. Every 10 seconds a background process checks if there are outputs ready to be uploaded to the GAB server.
 
+There is also a log area where you can check what is happening inside the GAB client.
 
+# Decomissioning the Science Lab
+Your lab deployment will continue working processing inputs until you delete the deployment resources. Note that this year our intention is to continue processing information after the GAB day. 
+
+In order to delete your deployment:
+1. Select the Resource Group containing your science lab deployment
+2. Click on Delete and confirm by typing your resource group name
+
+Thanks for your support on Global Azure Bootcamp 2019 Science Lab. Live Long and Prosper!
+
+# Frequently Asked Questions
+1. **How much will cost?**
+
+The lab uses an Azure Container Instances. The cost of each ACI would be around $1 for a full day (consumption 1vCPU and 1GB RAM over 24h).  
+So for example, if you deploy the science lab with 4 container instances during 12 hours, the costs would be under $2.
+For more information about pricing:
+* [Azure Container Instances](https://azure.microsoft.com/en-us/pricing/details/container-instances/)
 
