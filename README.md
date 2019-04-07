@@ -58,7 +58,7 @@ The easiest way to deploy the Science Lab is by using Azure Container Instances.
 
 Now relax and wait for the green check. Will take around 2 minutes to complete.
 
-# Verifying that the lab is working
+# Verifying the lab is working properly
 Once the lab has been deployed, you will see a set of resources under the resource group, one per container instance group. Each group will container just one container instance. 
 
 Click on one of the container instances, and get the public DNS name from the General Settings area. Browse the URL and you would be able to see if the lab is working properly. There are three areas:
