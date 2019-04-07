@@ -31,6 +31,17 @@ The easiest way to deploy the Science Lab is by using Azure Container Instances.
     <img src="http://azuredeploy.net/deploybutton.png"/>
 </a>
 
+2. Fill the form. You can get info about each field if you hold the cursor over the info icon.
+    * Choose the same subscription and resource group you specified on Step 2
+    * **Email, FullName, TeamName, CompanyName**: fill with your personal info. It be displayed on the global dashboards (e-mail will not)
+    * **CountryCode**: the 2 character ISO2 country code. Find your code at [Wikipedia](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)
+    * **LabKeyCode**: Is a predefined string with your location LAB Key. Ask admin staff at your location for the code.    
+    * **InstanceCount**: Number of container instance groups (20 or less). Check the available instances/quotas in your subscription before setting up a big number.
+    You can start with 1 or 2 container instance groups and repeat this process later to deploy more instances
+
+Now relax and wait for the green check. Will take around 2 minutes to complete.
+
+
 
 
 
