@@ -34,22 +34,22 @@ The easiest way to deploy the Science Lab is by using Azure Container Instances.
 2. Fill the form. You can get info about each field if you hold the cursor over the info icon.
     * Choose the subscription and resource group you where you want to deploy the container instances
     * **Location**: **IMPORTANT: the Azure Container Instances service is not available in all the regions**. At time of writing, you must choose between one of these locations:
-        "Central US"
-        "East US"
-        "East US2"
-        "North Central US"
-        "South Central US"
-        "West US"
-        "West US2"
-        "North Europe"
-        "West Europe"
-        "East Asia"
-        "Southeast Asia"
-        "Japan East"
-        "Australia East"
-        "Central India"
-        "South India"
-        "Canada Central"
+        * "Central US"
+        * "East US"
+        * "East US2"
+        * "North Central US"
+        * "South Central US"
+        * "West US"
+        * "West US2"
+        * "North Europe"
+        * "West Europe"
+        * "East Asia"
+        * "Southeast Asia"
+        * "Japan East"
+        * "Australia East"
+        * "Central India"
+        * "South India"
+        * "Canada Central"
     * **Email, FullName, TeamName, CompanyName**: fill with your personal info. It be displayed on the global dashboards (e-mail will not)
     * **CountryCode**: the 2 character ISO2 country code. Find your code at [Wikipedia](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)
     * **LabKeyCode**: Is a predefined string with your location LAB Key. Ask admin staff at your location for the code.    
