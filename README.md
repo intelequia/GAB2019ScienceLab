@@ -16,9 +16,9 @@ Follow these steps to deploy the GAB Science Lab:
 ## Requirements
 
 In order to participate on the GAB Science Lab you will need:
-* An active Azure subscription. You will need an active Azure subscription to deploy the containers on Azure. You can signup for a free subscription [here](https://azure.microsoft.com/free/) or use the Azure Passes shared on the Global Azure Bootcamp event. 
+* An active Azure subscription. The easiest way to deploy the lab is by using Azure Container Instances. You will need an active Azure subscription to deploy the containers on Azure. You can signup for a free subscription [here](https://azure.microsoft.com/free/) or use the Azure Passes shared on the Global Azure Bootcamp event. 
 * You can deploy the client on any other Docker powered environment:
-** locally on your laptop using Docker Desktop, follow instructions at https://www.docker.com/products/docker-desktop
-** on any other environment, check https://docs.docker.com/install/
+    * locally on your laptop using Docker Desktop, follow instructions at https://www.docker.com/products/docker-desktop
+    * on any other environment, check https://docs.docker.com/install/
 
 
