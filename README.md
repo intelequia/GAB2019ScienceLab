@@ -1,3 +1,5 @@
+![Global Azure Bootcamp 2019 - Science Lab](https://github.com/intelequia/GAB2019ScienceLab/raw/master/images/ScienceLab2019.jpg)
+
 # Global Azure Bootcamp 2019 - Science Lab
 This project contains instructions to deploy the Global Azure Bootcamp 2019 Science Lab
 
