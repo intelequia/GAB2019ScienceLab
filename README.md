@@ -54,11 +54,10 @@ The easiest way to deploy the Science Lab is by using Azure Container Instances.
         * "Canada Central"
     * **Email, FullName, TeamName, CompanyName**: fill with your personal info. It be displayed on the global dashboards (e-mail will not)
     * **CountryCode**: the 2 character ISO2 country code. Find your code at [Wikipedia](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)
-    * **LabKeyCode**: Is a predefined string with your location LAB Key. Ask admin staff at your location for the code.    
-    * **InstanceCount**: Number of container instance groups (20 or less). Check the available instances/quotas in your subscription before setting up a big number.
-    You can start with 1 or 2 container instance groups and repeat this process later to deploy more instances
+    * **LabKeyCode**: Is a predefined string with your location LAB Key. Ask admin staff at your location for the code. If you don't know any, just use THE-GAB-ORG as key.    
+    * **InstanceCount**: Number of container instance groups (20 or less). Check the available instances/quotas in your subscription before setting up a big number. TIP: You can start with 1 or 2 container instance groups and repeat this process later to deploy more instances
 
-Now relax and wait for the green check. Will take around 2 minutes to complete.
+Click on the Accept the Terms and Conditions checkbox, and relax waiting for the green check. Will take around 5 minutes to complete.
 
 # Verifying the lab is working properly
 Once the lab has been deployed, you will see a set of resources under the resource group, one per container instance group. Each group will container just one container instance. 
