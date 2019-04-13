@@ -150,6 +150,6 @@ docker ps -l
 
 2. Run the command to delete the container instance:
 ```
-dcker rm <containerid> -f
+docker rm <containerid> -f
 ```
 
