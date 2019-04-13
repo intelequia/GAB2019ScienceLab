@@ -21,7 +21,7 @@ See more at https://global.azurebootcamp.net/global-azure-science-lab-2019/
 
 In order to participate on the GAB Science Lab you will need:
 * An active Azure subscription. The easiest way to deploy the lab is by using Azure Container Instances. You will need an active Azure subscription to deploy the containers on Azure. You can signup for a free subscription [here](https://azure.microsoft.com/free/) or use the Azure Passes shared on the Global Azure Bootcamp event. 
-* You can deploy the client on any other Docker powered environment:
+* You can deploy the client on any other Docker powered environment (see deployment instructions at the end of this document):
     * locally on your laptop using Docker Desktop, follow instructions at https://www.docker.com/products/docker-desktop
     * on any other environment, check https://docs.docker.com/install/
 
@@ -121,6 +121,7 @@ You can deploy the client on any other Docker powered environment:
 * locally on your Windows/Mac laptop using Docker Desktop, follow instructions at https://www.docker.com/products/docker-desktop
 * on any other environment, check https://docs.docker.com/install/
 
+## Deploying a container with the science lab client
 Once you have Docker installed locally, follow this steps:
 
 1. Create a text file called `variables.env` with the following data (replace the values with your own data):
@@ -140,6 +141,7 @@ docker run -d -p 8080:80 --env-file variables.env --restart always globalazurebo
 
 This downloads the science lab client image and runs it on a container instance. If you browse http://localhost:8080, you will notice how the science lab is progressing.
 
+## Deleting the science lab client
 Once you don'w want to continue running the science lab, run the following commands:
 1. Search the container id by executing the following command and writing down the container id with the name "globalazurebootcamp/sciencelab2019:latest"
 ```
