@@ -114,3 +114,40 @@ You can deploy the lab before April 27th just for testing purposes, but note tha
 
 Yes, this year we want to continue hosting the Science Lab after the Global Azure Bootcamp day. Our intention is to continue processing data until the end of the TESS mission.
 
+# Running the lab outside Azure
+You can also run the science lab client on Windows, Linux or Mac, just because is implemented as a Docker container. The container image is available at Docker Hub https://hub.docker.com/r/globalazurebootcamp/sciencelab2019
+
+You can deploy the client on any other Docker powered environment:
+* locally on your Windows/Mac laptop using Docker Desktop, follow instructions at https://www.docker.com/products/docker-desktop
+* on any other environment, check https://docs.docker.com/install/
+
+Once you have Docker installed locally, follow this steps:
+
+1. Create a text file called `variables.env` with the following data (replace the values with your own data):
+```
+BatchClient__Email=johndoe@foo.com
+BatchClient__Fullname=John Doe
+BatchClient__TeamName=Global Azure Team
+BatchClient__CompanyName=Global Azure Bootcamp Org.
+BatchClient__CountryCode=XX
+BatchClient__LabKeyCode=THE-GAB-ORG
+```
+
+2. Run the following Docker command:
+```
+docker run -d -p 8080:80 --env-file variables.env --restart always globalazurebootcamp/sciencelab2019:latest
+```
+
+This downloads the science lab client image and runs it on a container instance. If you browse http://localhost:8080, you will notice how the science lab is progressing.
+
+Once you don'w want to continue running the science lab, run the following commands:
+1. Search the container id by executing the following command and writing down the container id with the name "globalazurebootcamp/sciencelab2019:latest"
+```
+docker ps -l
+```
+
+2. Run the command to delete the container instance:
+```
+dcker rm <containerid> -f
+```
+
