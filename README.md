@@ -62,15 +62,28 @@ The easiest way to deploy the Science Lab is by using Azure Container Instances.
 
 Click on the Accept the Terms and Conditions checkbox, and relax waiting for the green check. Will take around 5 minutes to complete.
 
+![Deployment completed](https://github.com/intelequia/GAB2019ScienceLab/raw/master/images/Deployment2.jpg)
+
+
 # Verifying the lab is working properly
 Once the lab has been deployed, you will see a set of resources under the resource group, one per container instance group. Each group will container just one container instance. 
 
-Click on one of the container instances, and get the public DNS name from the General Settings area. Browse the URL and you would be able to see if the lab is working properly. There are three areas:
+![Resource group](https://github.com/intelequia/GAB2019ScienceLab/raw/master/images/Deployment3.jpg)
+
+Click on one of the container instances, and get the public DNS name from the General Settings area. 
+
+![Deployment URL](https://github.com/intelequia/GAB2019ScienceLab/raw/master/images/Deployment4.jpg)
+
+Browse the URL and you would be able to see if the lab is working properly. There are three areas:
 * **Inputs Downloaded**: a green light indicates that is working properly. Every 10 seconds a background process checks if there are no inputs to process, and then downloads a new batch of inputs;
 * **Processing**: a green light indicates that is working properly. A background process starts processing the inputs as soon as they are available locally. The inputs are processed one by one and results are saved into an internal output queue;
 * **Ouputs Uploaded**: a green light indicates that is working properly. Every 10 seconds a background process checks if there are outputs ready to be uploaded to the GAB server.
 
 There is also a log area where you can check what is happening inside the GAB client.
+
+![Deployment details](https://github.com/intelequia/GAB2019ScienceLab/raw/master/images/Deployment5.jpg)
+
+Each input takes around 5 minutes to be processed by a container (pipeline 1 + pipeline 2 execution times). After the input is processed, it goes to the upload queue, and once uploaded, you start appearing on the Global Azure Bootcamp Science lab Dashboards, available at https://gablabdashboard.azurewebsites.net. 
 
 # Decomissioning the Science Lab
 Your lab deployment will continue working processing inputs until you delete the deployment resources. Note that this year our intention is to continue processing information after the GAB day. 
@@ -88,4 +101,16 @@ The lab uses an Azure Container Instances. The cost of each ACI would be around 
 So for example, if you deploy the science lab with 4 container instances during 12 hours, the costs would be under $2.
 For more information about pricing:
 * [Azure Container Instances](https://azure.microsoft.com/en-us/pricing/details/container-instances/)
+
+2. **How many instances can I deploy?**
+
+If you are deploying the lab using Azure Container Instances, there is a limit of 60 ACIs per Azure Subscription. You can deploy more than 60 if you use more subscriptions, but please, do the maths following FAQ #1. Remember you can also deploy the science lab on your own laptop or on any other Docker powered environment.
+
+3. **Can I start crunching data before April 27th?**
+
+You can deploy the lab before April 27th just for testing purposes, but note that we will reset all the data, stats and dashboards on April 27th. 
+
+4. **Can I continue processing data after April 27th?**
+
+Yes, this year we want to continue hosting the Science Lab after the Global Azure Bootcamp day. Our intention is to continue processing data until the end of the TESS mission.
 
