@@ -81,7 +81,7 @@ Browse the URL and you would be able to see if the lab is working properly. Ther
 
 There is also a log area where you can check what is happening inside the GAB client.
 
-![Deployment details](https://github.com/intelequia/GAB2019ScienceLab/raw/master/images/Deployment5.jpg)
+![Deployment details](https://github.com/intelequia/GAB2019ScienceLab/raw/master/images/Deployment6.jpg)
 
 Each input takes around 5 minutes to be processed by a container (pipeline 1 + pipeline 2 execution times). After the input is processed, it goes to the upload queue, and once uploaded, you start appearing on the Global Azure Bootcamp Science lab Dashboards, available at https://gablabdashboard.azurewebsites.net. 
 
