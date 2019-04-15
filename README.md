@@ -156,4 +156,4 @@ docker rm <containerid> -f
 # Troubleshooting
 
 ## I'm seeing "Minimum client version must be GAB.Client/1.x.x.x. Please, upgrade your container instance to the latest version" on the logs
-This is because we needed to break the backwards compatibility with the previous client, and you need to redeploy your container. When running on Azure Container instances, this can be easily acomplished by clicking on the "Restart" button available on the Overview section of your container when using the Azure Portal. 
+This is because we needed to break the backwards compatibility with the previous client, and you need to redeploy your container. When running on Azure Container instances, this can be easily accomplished by clicking on the "Restart" button available on the Overview section of your container when using the Azure Portal. 
