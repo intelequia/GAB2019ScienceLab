@@ -74,7 +74,7 @@ Click on one of the container instances, and get the public DNS name from the Ge
 
 ![Deployment URL](https://github.com/intelequia/GAB2019ScienceLab/raw/master/images/Deployment4.jpg)
 
-Browse the URL and you would be able to see if the lab is working properly. There are three areas:
+Browse the URL and you will be able to see if the lab is working properly. There are three areas:
 * **Inputs Downloaded**: a green light indicates that is working properly. Every 10 seconds a background process checks if there are no inputs to process, and then downloads a new batch of inputs;
 * **Processing**: a green light indicates that is working properly. A background process starts processing the inputs as soon as they are available locally. The inputs are processed one by one and results are saved into an internal output queue;
 * **Ouputs Uploaded**: a green light indicates that is working properly. Every 10 seconds a background process checks if there are outputs ready to be uploaded to the GAB server.
@@ -97,8 +97,8 @@ Thanks for your support on Global Azure Bootcamp 2019 Science Lab. Live Long and
 # Frequently Asked Questions
 1. **How much will cost?**
 
-The lab uses an Azure Container Instances. The cost of each ACI would be around $1 for a full day (consumption 1vCPU and 1GB RAM over 24h).  
-So for example, if you deploy the science lab with 4 container instances during 12 hours, the costs would be under $2.
+The lab uses an Azure Container Instances. The cost of each ACI is around $1 for a full day (consumption 1vCPU and 1GB RAM over 24h).  
+So for example, if you deploy the science lab with 4 container instances during 12 hours, the costs will be under $2.
 For more information about pricing:
 * [Azure Container Instances](https://azure.microsoft.com/en-us/pricing/details/container-instances/)
 
@@ -142,7 +142,7 @@ docker run -d -p 8080:80 --env-file variables.env --restart always globalazurebo
 This downloads the science lab client image and runs it on a container instance. If you browse http://localhost:8080, you will notice how the science lab is progressing.
 
 ## Deleting the science lab client on a local environment
-Once you don'w want to continue running the science lab, run the following commands:
+Once you want to stop running the science lab, run the following commands:
 1. Search the container id by executing the following command and writing down the container id with the name "globalazurebootcamp/sciencelab2019:latest"
 ```
 docker ps -l
