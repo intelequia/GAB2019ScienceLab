@@ -74,7 +74,7 @@ Click on one of the container instances, and get the public DNS name from the Ge
 
 ![Deployment URL](https://github.com/intelequia/GAB2019ScienceLab/raw/master/images/Deployment4.jpg)
 
-Browse the URL and you will be able to see if the lab is working properly. There are three areas:
+Browse the URL(with http:// not https) and you will be able to see if the lab is working properly. There are three areas:
 * **Inputs Downloaded**: a green light indicates that is working properly. Every 10 seconds a background process checks if there are no inputs to process, and then downloads a new batch of inputs;
 * **Processing**: a green light indicates that is working properly. A background process starts processing the inputs as soon as they are available locally. The inputs are processed one by one and results are saved into an internal output queue;
 * **Ouputs Uploaded**: a green light indicates that is working properly. Every 10 seconds a background process checks if there are outputs ready to be uploaded to the GAB server.
