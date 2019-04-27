@@ -1,0 +1,50 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: gab-2019-science-lab
+spec:
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: gab-2019-science-lab
+    spec:
+      containers:
+      - name: sciencelab2019
+        image: globalazurebootcamp/sciencelab2019:latest
+        env:
+        - name: BatchClient__Email
+          value: "You email here"
+        - name: BatchClient__Fullname
+          value: "Your name here"
+        - name: BatchClient__TeamName
+          value: "Your team here"
+        - name: BatchClient__CompanyName
+          value: "Your company here"
+        - name: BatchClient__CountryCode
+          value: "Your 2-digit CountryCode here"
+        - name: BatchClient__LabKeyCode
+          value: "Your lab key here
+        resources:
+          limits:
+            cpu: "1.5"
+            memory: 2Gi
+          requests:
+            cpu: 1
+            memory: "1.5Gi"
+        ports:
+        - containerPort: 80
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: gab-2019-science-lab
+spec:
+  type: LoadBalancer
+  ports:
+  - name:
+    port: 80
+    targetPort: 80
+  selector:
+    app: gab-2019-science-lab
