@@ -66,7 +66,7 @@ Click on the Accept the Terms and Conditions checkbox, and relax waiting for the
 
 
 # Verifying the lab is working properly
-Once the lab has been deployed, you will see a set of resources under the resource group, one per container instance group. Each group will container just one container instance. 
+Once the lab has been deployed, you will see a set of resources under the resource group, one per container instance group. Each group will contain just one container instance. 
 
 ![Resource group](https://github.com/intelequia/GAB2019ScienceLab/raw/master/images/Deployment3.jpg)
 
