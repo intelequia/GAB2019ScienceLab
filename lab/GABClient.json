@@ -47,7 +47,7 @@
       "minLength": 3,
       "maxLength": 50,
       "metadata": {
-        "description": "The code that identifies your Azure Bootcamp headquarter. Ask to staff for it or leave it in blank if you are not running the science lab as part of an Azure Bootcamp location"
+        "description": "The code that identifies your Azure Bootcamp headquarter. Ask to staff for it or use THE-GAB-ORG if you are not running the science lab as part of an Azure Bootcamp location"
       }
     },
     "InstanceCount": {
