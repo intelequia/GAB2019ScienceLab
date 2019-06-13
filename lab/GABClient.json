@@ -46,6 +46,7 @@
       "type": "string",
       "minLength": 3,
       "maxLength": 50,
+      "defaultValue": "THE-GAB-ORG",
       "metadata": {
         "description": "The code that identifies your Azure Bootcamp headquarter. Ask to staff for it or use THE-GAB-ORG if you are not running the science lab as part of an Azure Bootcamp location"
       }
@@ -67,7 +68,7 @@
 	"memoryInGb": "1.5",
 	"location": "[resourceGroup().location]",
 	"restartPolicy": "always",
-    "DeployContainer.Uri": "https://raw.githubusercontent.com/intelequia/GAB2019ScienceLab/master/lab/assets/aci-container.json",	
+    "DeployContainer.Uri": "https://raw.githubusercontent.com/intelequia/GAB2019ScienceLab/master/lab/assets/aci-container.json"	
   },
   "resources": [
 	{
@@ -95,7 +96,7 @@
 		  "TeamName": { "value": "[parameters('TeamName')]" },
 		  "CompanyName": { "value": "[parameters('CompanyName')]" },
 		  "CountryCode": { "value": "[parameters('CountryCode')]" },
-		  "LabKeyCode": { "value": "[parameters('LabKeyCode')]" },
+		  "LabKeyCode": { "value": "[parameters('LabKeyCode')]" }
 		}
 	  },
 	  "copy": {
