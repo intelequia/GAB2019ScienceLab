@@ -46,7 +46,6 @@
       "type": "string",
       "minLength": 3,
       "maxLength": 50,
-      "defaultValue": "THE-GAB-ORG",
       "metadata": {
         "description": "The code that identifies your Azure Bootcamp headquarter. Ask to staff for it or use THE-GAB-ORG if you are not running the science lab as part of an Azure Bootcamp location"
       }
