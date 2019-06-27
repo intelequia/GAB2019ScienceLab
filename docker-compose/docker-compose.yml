@@ -1,0 +1,31 @@
+version: "3"
+services:
+  web:
+    image: globalazurebootcamp/sciencelab2019:latest
+    env:
+      - name: BatchClient__Email
+        value: "You email here"
+      - name: BatchClient__Fullname
+        value: "Your name here"
+      - name: BatchClient__TeamName
+        value: "Your team here"
+      - name: BatchClient__CompanyName
+        value: "Your company here"
+      - name: BatchClient__CountryCode
+        value: "Your 2-digit CountryCode here"
+      - name: BatchClient__LabKeyCode
+        value: "Your lab key here
+    deploy:
+      replicas: 5
+      resources:
+        limits:
+          cpus: "1"
+          memory: 2048M
+      restart_policy:
+        condition: on-failure
+    ports:
+      - "8080:80"
+    networks:
+      - webnet
+networks:
+  webnet:
